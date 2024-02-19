@@ -14,6 +14,21 @@ var _tokenRoutes = require('./routes/tokenRoutes'); var _tokenRoutes2 = _interop
 var _AlunoRoutes = require('./routes/AlunoRoutes'); var _AlunoRoutes2 = _interopRequireDefault(_AlunoRoutes);
 var _fotoRoutes = require('./routes/fotoRoutes'); var _fotoRoutes2 = _interopRequireDefault(_fotoRoutes);
 
+const whiteList=[
+  'http://localhost:3006'
+]
+
+const corsOptions= {
+  origin: function(origin, cb){
+    if(whiteList.indexOf(origin)!== -1 || !origin){
+      cb(null, true );
+    } else{
+      cb(new Error('not alowed by CORS'));
+    }
+  }
+}
+
+
 class App{
   constructor(){
     this.app= _express2.default.call(void 0, );
@@ -23,7 +38,7 @@ class App{
   }
 
   middlewares(){
-    this.app.use(_cors2.default.call(void 0, ));
+    this.app.use(_cors2.default.call(void 0, corsOptions));
     this.app.use(_helmet2.default.call(void 0, ));
     this.app.use(_express2.default.urlencoded({extended:true}));
     this.app.use(_express2.default.json());
