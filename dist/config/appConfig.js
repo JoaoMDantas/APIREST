@@ -2,6 +2,5 @@
 
 
 exports. default = {
-  url: process.env.APP_URL,
-
+  url: 'http://35.199.94.204',
 }

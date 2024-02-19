@@ -2,7 +2,4 @@
 
 const port=process.env.APP_PORT;
 
-_app2.default.listen(port, ()=>{
-  console.log(`escutando a porta ${port}`);
-  console.log(`CRTL + CLIQUE EM  http://localhost:${port}`);
-});
+_app2.default.listen(port, ()=>{ console.log(`CRTL + CLIQUE EM  http://localhost:${port}`);});

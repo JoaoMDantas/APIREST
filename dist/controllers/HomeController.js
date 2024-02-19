@@ -7,15 +7,15 @@ class HomeController{
    res.json('hello world');
   }*/
 async  index(req,res){
-  const novoaluno= await _aluno2.default.create({
+  /*const novoaluno= await Aluno.create({
     nome: 'Luiz',
     sobrenome:'pedro',
-    email:'joaomaqrcos@hotmail.com',
+    email:'joaomcos@hotmail.com',
     idade:35,
     peso:135,
     altura:2.5,
-  });
-    res.json(novoaluno);
+  });*/
+    res.json('hello world');
   }
   //cria uma mariadb com esses dados
 };
